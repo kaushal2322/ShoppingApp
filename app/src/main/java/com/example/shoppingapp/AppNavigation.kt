@@ -9,6 +9,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.ecom.screen.AuthScreen
 import com.example.shoppingapp.pages.CategoryPrductPages
+import com.example.shoppingapp.pages.ProductDetailPage
 import com.example.shoppingapp.screen.HomeScreen
 import com.example.shoppingapp.screen.LoginScreen
 import com.example.shoppingapp.screen.SignupScreen
@@ -45,6 +46,11 @@ fun AppNavigation(modifier: Modifier = Modifier) {
         composable("CatoryProduct/{categoryId}") {
             var categoryId = it.arguments?.getString("categoryId")
             CategoryPrductPages(modifier,categoryId?:"")
+        }
+
+        composable("product-detail/{productid}") {
+            var productid = it.arguments?.getString("productid")
+            ProductDetailPage(modifier,productid?:"")
         }
 
         
